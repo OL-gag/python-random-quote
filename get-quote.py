@@ -6,11 +6,21 @@ def primary():
     quotes = f.readlines()
     f.close()
 
-    last = 13
-    rnd = random.randint(0, last)
+    last = 16
 
-    print(quotes[rnd])
+    rnd = random.randint(0, last)
+    print(quotes[rnd].replace('\n', ""))
+
+    rnd = random.randint(0, last)
+    print(quotes[rnd].replace("\n", ""))
+
+
+def add_quote(quote):
+    f = open("quotes.txt", "a")
+    f.write(quote)
+    f.close()
 
 
 if __name__ == "__main__":
     primary()
+    add_quote("My new line is added")
